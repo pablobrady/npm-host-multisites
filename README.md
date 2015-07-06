@@ -36,8 +36,7 @@ All the websites will be accessible via the standard port 80, but each site inte
 ### Be sure that each app_*.js file contains the correct port number (ex. 9001 & 9002 in these sample sites)
 
 
-### Launch the Sites via the included simple script
-## Note that this sample script launches 3 NodeJS apps... 
+### Note that this sample script launches 3 NodeJS apps... 
 [sudo] node app_testsite1.js (port 9001) 
 
 [sudo] node app_testsite2.js (port 9002) 
@@ -45,6 +44,9 @@ All the websites will be accessible via the standard port 80, but each site inte
 [sudo] node app.js(standard web port 80)
 
 
+### Launch the Sites via the included simple script
+
 ``` cd /Sites ``` 
 
 ``` [sudo] ./go ``` 
+
