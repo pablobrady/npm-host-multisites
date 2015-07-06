@@ -1,25 +1,17 @@
-// Module dependencies.
-var application_root = __dirname,
-    express = require( 'express' ),
-    vhost = require( 'vhost' );
+var bouncy = require('bouncy');
 
-function createVirtualHost(domainName, dirPath) {
-    return vhost(domainName, express.static( dirPath ));
-}
-
-//Create server
-var app = express();
-
-//Create the virtual hosts
-var host1 = createVirtualHost("testsite1.localhost", "testsite1");
-var host2 = createVirtualHost("testsite2.localhost", "testsite2");
-
-//Use the virtual hosts
-app.use(host1);
-app.use(host2);
-
-//Start server
-var port = 80;
-app.listen( port, function() {
-    console.log( 'Express server listening on port %d in %s mode', port, app.settings.env );
+var server = bouncy(function (req, res, bounce) {
+    if (req.headers.host === 'testsite1.localhost') {
+        bounce(9001);
+    }
+    else if (req.headers.host === 'testsite2.localhost') {
+        bounce(9002);
+    }
+    else {
+        res.statusCode = 404;
+        res.end('no such host');
+    }
 });
+server.listen(80); 
+	// Can't listen on ports < 1024 without root privileges.
+	// Requires 'sudo npm app.js' on launch. (Or 'sudo ./go' to start the launch script.)
