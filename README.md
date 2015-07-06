@@ -10,6 +10,8 @@ All the websites will be accessible via the standard port 80, but each site inte
 
 ``` cd /Sites ``` 
 
+(You'll probably want rename this repository's "npm-host-multisites" directory to "Sites", or any other name of your liking.)
+
 
 ### Install supporting Modules 
 
@@ -20,8 +22,7 @@ All the websites will be accessible via the standard port 80, but each site inte
 ``` [sudo] npm install ``` (Bouncy... )
 
 
-## Create the sites you wish to host
-### Make both sites appear uniquely, in the browser
+### Create the sites you wish to host
 
 ``` \testsite1\..       ex. "Welcome to TestSite1" ``` 
 
@@ -29,11 +30,17 @@ All the websites will be accessible via the standard port 80, but each site inte
 
 
 ### Inside of each site directory, create a separate NodeJS file
+
 ``` \testsite1\app_testsite1.js ``` 
 
 ``` \testsite2\app_testsite2.js ``` 
 
+(These sample sites already contain two NodeJS .js files.)
+
+
 ### Be sure that each app_*.js file contains the correct port number (ex. 9001 & 9002 in these sample sites)
+
+(These NodeJS .js file are already configured with port numbers 9001 & 9002.)
 
 
 ### Note that this sample script launches 3 NodeJS apps... 
