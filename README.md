@@ -11,13 +11,13 @@ All the websites will be accessible via the standard port 80, but each site inte
 ``` cd /Sites ``` 
 
 
-### Install BOUNCY, for sharing our proxy hosts later... 
+### Install supporting Modules 
 
 ``` [sudo] npm install forever -g ```
 
 ``` [sudo] npm install forever-monitor -g ```
 
-``` [sudo] npm install ```
+``` [sudo] npm install ``` (Bouncy... )
 
 
 ## Create the sites you wish to host
